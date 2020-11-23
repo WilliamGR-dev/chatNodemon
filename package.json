@@ -13,6 +13,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^4.2.0",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
   }
 }
