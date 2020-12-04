@@ -36,4 +36,4 @@ app.get('/chat', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`Le serveur est sur le port ${port}`));
+app.listen(port, () => console.log(`Le serveurs est sur le port ${port}`));
