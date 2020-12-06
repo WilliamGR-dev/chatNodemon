@@ -15,11 +15,11 @@ app.engine('html', require('ejs').renderFile);
 const port = 3000;
 
 app.get('/', (req, res) => {
-    res.render('index.ejs')
+    res.status(200).render('index.ejs')
 });
 
 app.get('/signup', (req, res) => {
-    res.render('signup.ejs')
+    res.status(200).render('signup.ejs')
 });
 
 app.post('/signup', urlEncoderParser, async (req,res) => {
@@ -40,13 +40,13 @@ app.post('/signup', urlEncoderParser, async (req,res) => {
         }
         res.status(200).render('signup.ejs')
     } catch (error) {
-        console.error('erreur dans le post signup', error)
+        console.error('erreur dans le post signup', error);
         res.status(500).render('500.ejs')
     }
 });
 
 app.get('/signin', (req, res) => {
-    res.render('signin.ejs')
+    res.status(200).render('signin.ejs')
 });
 
 app.post('/signin', (req,res) => {
@@ -55,7 +55,7 @@ app.post('/signin', (req,res) => {
     console.log('Email ->' + req.body.email);
     console.log('Password ->' +req.body.password);
     console.log('');
-    res.render('signin.ejs')
+    res.status(200).render('signin.ejs')
 });
 
 app.get('/admin', async (req, res) => {
@@ -71,7 +71,7 @@ app.get('/admin', async (req, res) => {
 });
 
 app.get('/chat', (req, res) => {
-    res.render('chat.ejs')
+    res.status(200).render('chat.ejs')
 });
 
 
