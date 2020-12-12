@@ -23,7 +23,14 @@
                  <a class="nav-link" href="/chat">Chat<span class="sr-only"></span></a>
              </li>
              <li class="nav-item active">
-                 <a class="nav-link" href="/admin">Admin<span class="sr-only"></span></a>
+                 <% if (user){ %>
+                     <% if (user.isAdmin){ %>
+                         <a class="nav-link" href="/admin">Admin<span class="sr-only"></span></a>
+                     <% }else { %>
+                         <a class="nav-link" href="/profil">Profil<span class="sr-only"></span></a>
+                     <% }%>
+                 <% }else { %>
+                 <% }%>
              </li>
          </ul>
          <form class="form-inline my-2 my-lg-0" >
@@ -37,8 +44,8 @@
 <div class="card w-75 m-auto p-4">
 <form class="form-signin" action="/signin" method="post">
 <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-<label for="inputEmail" class="sr-only">Email address</label>
-<input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required="" autofocus="">
+<label for="inputUsername" class="sr-only">Email address</label>
+<input type="text" id="inputUsername" class="form-control" placeholder="Nom ultilisateur" name="username" required="" autofocus="">
 <label for="inputPassword" class="sr-only">Password</label>
 <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Mot de passe" required="">
 <div class="checkbox mb-3">
@@ -48,6 +55,7 @@
 </div>
 <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
 <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    <% if (alerte){%> <div class="alert <%=alerte.class%>"><%=alerte.message%></div> <%}%>
 </form>
 </div></div>
 
