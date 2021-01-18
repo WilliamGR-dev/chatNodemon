@@ -10,7 +10,7 @@ const passport = require('passport');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const {emailRegex, usernameRegex, passwordRegex} = require('./helpers/regex');
-const port = 3000;
+const port = 4080;
 app.use(urlEncoderParser);
 app.use(helmet());
 app.use(express.static('public'));
