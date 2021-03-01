@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
-    "dev": "nodemon app",
-    "prod": "APP_PORT=4089 pm2 start app.js --watch --name p4089"
+    "dev": "APP_PORT=4089 nodemon app --ignore database.sqlite3",
+    "prod": "NODE_ENV=production APP_PORT=4089 pm2 start app.js --watch --name p4089"
   },
   "author": "William Gr",
   "license": "ISC",
