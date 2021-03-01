@@ -10,9 +10,11 @@ const passport = require('passport');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const {emailRegex, usernameRegex, passwordRegex} = require('./helpers/regex');
-const port = 4080;
+const port = process.env.APP_PORT ? process.env.APP_PORT : 4080;
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 app.use(urlEncoderParser);
-app.use(helmet());
+//app.use(helmet());
 app.use(express.static('public'));
 
 app.set('view engine', './views');
@@ -529,7 +531,10 @@ app.get('/signout', (req, res) => {
     })
 });
 
+io.on('connection', (socket) => {
+    socket.emit('chat','Bienvenue beau gosse');
+    socket.broadcast.emit('chat','Oe oe oe un gars en +')
+})
 
 
-
-app.listen(port, () => console.log(`Le serveurs est sur le port ${port}`));
+http.listen(port, () => console.log(`Le serveurs est sur le port ${port}`));

@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
-    "dev": "APP_PORT=4080 nodemon app",
+    "dev": "nodemon app",
     "prod": "APP_PORT=4089 pm2 start app.js --watch --name p4089"
-
   },
   "author": "William Gr",
   "license": "ISC",
@@ -21,6 +20,7 @@
     "passport-local": "^1.0.0",
     "pug": "^3.0.0",
     "sequelize": "^6.3.5",
+    "socket.io": "^3.1.0",
     "sqlite3": "^5.0.0"
   }
 }
