@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
     "dev": "APP_PORT=4089 nodemon app --ignore database.sqlite3",
-    "prod": "NODE_ENV=production APP_PORT=4089 pm2 start app.js --watch --name p4089"
+    "prod": "NODE_ENV=productions APP_PORT=4089 pm2 start app.js --watch --name p4089"
   },
   "author": "William Gr",
   "license": "ISC",
